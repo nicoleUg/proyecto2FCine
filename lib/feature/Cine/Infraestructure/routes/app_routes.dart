@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pract2/feature/Cine/Components/screens/movie_list_screen.dart';
-import 'package:pract2/feature/Cine/Components/screens/movie_details_screen.dart';
+import '../../Components/screens/movie_list_screen.dart';
+import '../../Components/screens/movie_details_screen.dart';
 
 class AppRoutes {
   static const String home = '/';

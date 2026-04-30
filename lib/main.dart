@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:pract2/feature/Cine/Infraestructure/routes/app_routes.dart';
+import 'feature/Cine/Infraestructure/routes/app_routes.dart';
 
 void main() {
   runApp(const CinemaApp());
