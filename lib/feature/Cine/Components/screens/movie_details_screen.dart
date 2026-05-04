@@ -38,7 +38,7 @@ class MovieDetailsScreen extends StatelessWidget {
               icon: const Icon(Icons.arrow_back),
               label: const Text('Volver a la cartelera'),
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.pop(context);//mandar pop con informacion, es algo que pide el docente 
               },
             ),
           ],

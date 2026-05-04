@@ -6,9 +6,9 @@ class MoviesListScreen extends StatelessWidget {
   const MoviesListScreen({super.key});
 
   final List<Movie> movies = const [
-    Movie(title: 'Dune: Parte Dos'),
-    Movie(title: 'Oppenheimer'),
-    Movie(title: 'Interstellar'),
+    Movie(title: 'Dune: Parte Dos', description: 'Una épica historia de ciencia ficción', rating: 8.5),
+    Movie(title: 'Oppenheimer', description: 'La historia del físico J. Robert Oppenheimer', rating: 8.0),
+    Movie(title: 'Interstellar', description: 'Un viaje a través del espacio y el tiempo', rating: 8.7),
   ];
 
   Widget build(BuildContext context) {
