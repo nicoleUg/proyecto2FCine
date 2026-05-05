@@ -1,4 +1,3 @@
-// ignore_for_file: annotate_overrides
 
 import 'package:flutter/material.dart';
 import '../../domain/movie.dart';
@@ -16,10 +15,32 @@ class MovieDetailsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              movie.title,
-              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
+              Text(
+                movie.title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                movie.description,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 18),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.star, color: Colors.amber),
+                  const SizedBox(width: 6),
+                  Text(
+                    movie.rating.toString(),
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),  
             const SizedBox(height: 40),
             ElevatedButton.icon(
               icon: const Icon(Icons.local_activity),
@@ -30,7 +51,11 @@ class MovieDetailsScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => BuyTicketScreen(movie: movie),
                   ),
-                );
+                ).then((buyResult) {
+                  if (buyResult != null) {
+                    Navigator.pop(context, buyResult);
+                  }
+                });
               },
             ),
             const SizedBox(height: 20),
@@ -38,7 +63,9 @@ class MovieDetailsScreen extends StatelessWidget {
               icon: const Icon(Icons.arrow_back),
               label: const Text('Volver a la cartelera'),
               onPressed: () {
-                Navigator.pop(context);//mandar pop con informacion, es algo que pide el docente 
+                Navigator.pop(
+                  context,
+                ); //mandar pop con informacion, es algo que pide el docente
               },
             ),
           ],

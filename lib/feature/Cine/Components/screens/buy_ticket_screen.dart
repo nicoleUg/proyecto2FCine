@@ -1,6 +1,7 @@
 // ignore_for_file: annotate_overrides
 
 import 'package:flutter/material.dart';
+import '../../domain/ticket.dart';
 import '../../domain/movie.dart';
 
 class BuyTicketScreen extends StatelessWidget {
@@ -29,10 +30,11 @@ class BuyTicketScreen extends StatelessWidget {
             const SizedBox(height: 40),
             FilledButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('¡Compra procesada con éxito!')),
-                );
-                Navigator.pop(context);
+               final ticket = Ticket(movieTitle: movie.title, seat: 'G4', price: 10.0, purchasedAt: DateTime.now());
+               ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Compra exitosa')),
+               );
+               Navigator.pop(context, ticket);
               },
               child: const Text('Pagar \$10.00'),
             ),
