@@ -13,7 +13,7 @@ class CinemaApp extends StatelessWidget {
     return MaterialApp(
       title: 'App de Cine',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 174, 36, 36)),
         useMaterial3: true,
       ),
       initialRoute: AppRoutes.home,
