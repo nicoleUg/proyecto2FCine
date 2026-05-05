@@ -15,7 +15,7 @@ class MovieDetailsScreen extends StatelessWidget {
       );
     }
     final Movie movie = args;
-    
+
     return Scaffold(
       appBar: AppBar(title: const Text('Detalles')),
       body: Center(
@@ -60,7 +60,7 @@ class MovieDetailsScreen extends StatelessWidget {
                   ),
                 ).then((buyResult) {
                   if (buyResult != null) {
-                    Navigator.pop(context, buyResult);
+                    Navigator.pop(context, buyResult);//mandar pop con informacion, es algo que pide el docente
                   }
                 });
               },
@@ -70,9 +70,7 @@ class MovieDetailsScreen extends StatelessWidget {
               icon: const Icon(Icons.arrow_back),
               label: const Text('Volver a la cartelera'),
               onPressed: () {
-                Navigator.pop(
-                  context,
-                ); //mandar pop con informacion, es algo que pide el docente
+                Navigator.pop(context); 
               },
             ),
           ],
