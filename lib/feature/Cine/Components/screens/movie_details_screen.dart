@@ -7,8 +7,15 @@ class MovieDetailsScreen extends StatelessWidget {
   const MovieDetailsScreen({super.key});
 
   Widget build(BuildContext context) {
-    final Movie movie = ModalRoute.of(context)!.settings.arguments as Movie;
-
+    final args = ModalRoute.of(context)?.settings.arguments;
+    if (args is! Movie) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('Detalles')),
+        body: const Center(child: Text('Datos de película no disponibles')),
+      );
+    }
+    final Movie movie = args;
+    
     return Scaffold(
       appBar: AppBar(title: const Text('Detalles')),
       body: Center(
